@@ -18,6 +18,7 @@ window = pyglet.window.Window(
         width=config.WINDOW_WIDTH,
         height=config.WINDOW_HEIGHT)
 
+# asset from pixabay.com
 background_image = pyglet.resource.image('assets/background.png')
 
 class NavState(Enum):
