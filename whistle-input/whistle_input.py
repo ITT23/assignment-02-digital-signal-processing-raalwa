@@ -32,7 +32,7 @@ def init() -> None:
     '''
     Handles global vars, input selection and audio stream setup
     '''
-    global p, input_device, stream, state, last_frequencies, keyboard, boxes, background, batch
+    global p, input_device, stream, state, last_frequencies, keyboard, boxes, background
     p = pyaudio.PyAudio()
 
     last_frequencies = np.zeros(10)
@@ -114,7 +114,7 @@ def calculate_trend() -> None:
         trend = model.coef_
         if trend > 0:
             state = NavState.UP
-        else:
+        elif trend < 0:
             state = NavState.DOWN
         last_frequencies.fill(0)
     else:
