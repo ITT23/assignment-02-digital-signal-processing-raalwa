@@ -114,7 +114,7 @@ def calculate_trend() -> None:
         trend = model.coef_
         if trend > 0:
             state = NavState.UP
-        elif trend < 0:
+        else:
             state = NavState.DOWN
         last_frequencies.fill(0)
     else:
